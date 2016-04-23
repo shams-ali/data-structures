@@ -6,7 +6,7 @@ var Queue = function() {
   var newQueue = {};
   newQueue.storage = {};
   var storageLength = Object.keys(newQueue.storage).length;
-  
+
 
   extend(newQueue, queueMethods);
   return newQueue;
@@ -37,7 +37,7 @@ queueMethods.enqueue = function(value) {
 queueMethods.dequeue = function() {
   var res = this.storage[0];
   delete this.storage[0];
-  //update storage object with new key 
+  //update storage object with new key
   //subtract current key - 1
 
   //for in loop over object
@@ -55,10 +55,3 @@ queueMethods.size = function() {
   this.storageLength = Object.keys(this.storage).length;
   return this.storageLength;
 };
-
-
-
-
-
-
-
