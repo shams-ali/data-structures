@@ -30,15 +30,7 @@ HashTable.prototype.retrieve = function(k) {
       return this.hash[index][i][1];
     }
   }
-  // _.reduce (this.hash[index], function(prev, curr) {
-  //   // console.log(value[0])
-  //   // console.log(value[1])
-  //   // console.log(k)
-  //   if (curr[0] === k) {
-  //     return value[1];
-  //   }
-  //}, false);
-  //return this.hash[index][0][1];
+  //return undefined;
 
 };
 

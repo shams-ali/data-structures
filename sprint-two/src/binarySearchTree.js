@@ -57,6 +57,7 @@ bstMethods.depthFirstLog = function(fun) {
     this.right.depthFirstLog(fun);
   }
 };
+console.log('hi');
 /*
  * Complexity: What is the time complexity of the above functions?
  */

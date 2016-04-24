@@ -17,7 +17,7 @@ Graph.prototype.addNode = function(node) {
 // ------------------------
 // Return a boolean value indicating if the value passed to contains is represented in the graph.
 Graph.prototype.contains = function(node) {
-  return _.contains(Object.keys(this.vertices), node +'');
+  return _.contains(Object.keys(this.vertices), node.toString());
 };
 
 // ------------------------
