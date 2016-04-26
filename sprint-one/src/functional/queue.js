@@ -19,7 +19,7 @@ var Queue = function() {
   someInstance.dequeue = function() {
     var res = storage[0];
     delete storage[0];
-    //update storage object with new key 
+    //update storage object with new key
     //subtract current key - 1
 
     //for in loop over object

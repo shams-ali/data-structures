@@ -1,3 +1,4 @@
+/*
 var Set = function() {
   var set = Object.create(setPrototype);
   set._storage = [];
@@ -21,6 +22,26 @@ setPrototype.remove = function(item) {
   this._storage = _.reject (this._storage, function(value) {
     return value === item;
   });
+};
+*/
+
+var Set = function() {
+  var created = Object.create(setMethods);
+  return created;
+};
+
+var setMethods = {};
+
+setMethods.add = function (value) {
+  this[value] = value;
+};
+
+setMethods.contains = function (value) {
+  return !!this[value];
+};
+
+setMethods.remove = function (value) {
+  delete this[value];
 };
 
 var set = Set();

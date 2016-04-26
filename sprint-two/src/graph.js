@@ -1,5 +1,5 @@
 
-
+/*
 // ------------------------
 // Instantiate a new graph
 
@@ -60,6 +60,43 @@ Graph.prototype.forEachNode = function(cb) {
 };
 
 var graph = new Graph();
+*/
 /*
  * Complexity: What is the time complexity of the above functions?
  */
+
+ var Graph = function (value) {
+   this.vertices = {};
+ };
+
+ Graph.prototype.addNode = function (node) {
+   this.vertices[node] = this.vertices[node] || {edges: {}};
+ };
+
+ Graph.prototype.contains = function (node) {
+   return !!this.vertices[node];
+ };
+
+ Graph.prototype.removeNode = function (node) {
+   _.each(this.vertices[node].edges, function(value) {
+     this.removeEdge(node, value);
+   });
+   delete this.vertices[node];
+
+ };
+ Graph.prototype.addEdge = function (fromNode, toNode) {
+   this.vertices[fromNode].edges[toNode] = toNode;
+   this.vertices[toNode].edges[fromNode] = fromNode;
+ };
+ Graph.prototype.hasEdge = function (fromNode, toNode) {
+   return !!this.vertices[fromNode].edges[toNode];
+ };
+ Graph.prototype.removeEdge = function (fromNode, toNode) {
+   delete this.vertices[fromNode].edges[toNode];
+   delete this.vertices[toNode].edges[fromNode];
+ };
+ Graph.prototype.forEachNode = function (cb) {
+   _.each (this.vertices, function(value, key) {
+     cb(key);
+   });
+ };
